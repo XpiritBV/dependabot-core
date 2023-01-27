@@ -6,18 +6,10 @@ module Dependabot
   module AzurePipelines
     class Version < Gem::Version
       def initialize(version)
-        version = Version.remove_leading_v(version)
         super
       end
 
-      def self.remove_leading_v(version)
-        return version unless version.to_s.match?(/\Av([0-9])/)
-
-        version.to_s.delete_prefix("v")
-      end
-
       def self.correct?(version)
-        version = Version.remove_leading_v(version)
         super
       end
     end
