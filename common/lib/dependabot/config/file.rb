@@ -54,6 +54,7 @@ module Dependabot
         "pip" => "pip",
         "pub" => "pub",
         "terraform" => "terraform"
+        "azure-pipelines" => "azure_pipelines"
       }.freeze
 
       def ignore_conditions(cfg)

@@ -20,6 +20,7 @@ require "dependabot/cargo"
 require "dependabot/go_modules"
 require "dependabot/npm_and_yarn"
 require "dependabot/bundler"
+require "dependabot/azure_pipelines"
 require "dependabot/pub"
 require "dependabot/environment"
 

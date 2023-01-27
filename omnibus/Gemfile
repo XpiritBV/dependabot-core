@@ -19,6 +19,7 @@ gemspec path: "../nuget"
 gemspec path: "../pub"
 gemspec path: "../python"
 gemspec path: "../terraform"
+gemspec path: "../azure_pipelines"
 
 # Visual Studio Code integration
 gem "reek", group: :development
