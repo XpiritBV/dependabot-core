@@ -3,7 +3,7 @@
 require "dependabot/utils"
 
 module Dependabot
-  module GithubActions
+  module AzurePipelines
     class Version < Gem::Version
       def initialize(version)
         version = Version.remove_leading_v(version)

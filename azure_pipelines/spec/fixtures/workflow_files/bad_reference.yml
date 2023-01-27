@@ -1,7 +1,0 @@
-on: [push]
-
-name: Integration
-jobs:
-  - <<: *ruby
-    directory: "/ruby/agoo"
-    update_schedule: "live"

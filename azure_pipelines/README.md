@@ -1,6 +1,6 @@
-## `dependabot-github_actions`
+## `dependabot-azure_pipelines`
 
-GitHub Actions support for [`dependabot-core`][core-repo].
+Azure Pipelines support for [`dependabot-core`][core-repo].
 
 ### Running locally
 

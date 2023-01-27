@@ -4,7 +4,7 @@ require "dependabot/file_fetchers"
 require "dependabot/file_fetchers/base"
 
 module Dependabot
-  module GithubActions
+  module AzurePipelines
     class FileFetcher < Dependabot::FileFetchers::Base
       FILENAME_PATTERN = /^(\.github|action.ya?ml)$/
 

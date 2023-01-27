@@ -12,7 +12,7 @@ require "dependabot/github_actions/version"
 # https://help.github.com/en/articles/configuring-a-workflow#referencing-actions-in-your-workflow
 # https://help.github.com/en/articles/workflow-syntax-for-github-actions#example-using-versioned-actions
 module Dependabot
-  module GithubActions
+  module AzurePipelines
     class FileParser < Dependabot::FileParsers::Base
       require "dependabot/file_parsers/base/dependency_set"
 

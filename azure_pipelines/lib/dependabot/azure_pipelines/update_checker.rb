@@ -8,7 +8,7 @@ require "dependabot/github_actions/version"
 require "dependabot/github_actions/requirement"
 
 module Dependabot
-  module GithubActions
+  module AzurePipelines
     class UpdateChecker < Dependabot::UpdateCheckers::Base
       def latest_version
         @latest_version ||= fetch_latest_version

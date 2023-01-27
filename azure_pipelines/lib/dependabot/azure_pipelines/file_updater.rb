@@ -5,7 +5,7 @@ require "dependabot/file_updaters/base"
 require "dependabot/errors"
 
 module Dependabot
-  module GithubActions
+  module AzurePipelines
     class FileUpdater < Dependabot::FileUpdaters::Base
       def self.updated_files_regex
         [%r{\.github/workflows/.+\.ya?ml$}]

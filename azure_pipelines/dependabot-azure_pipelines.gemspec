@@ -4,8 +4,8 @@ Gem::Specification.new do |spec|
   common_gemspec =
     Bundler.load_gemspec_uncached("../common/dependabot-common.gemspec")
 
-  spec.name         = "dependabot-github_actions"
-  spec.summary      = "GitHub Actions support for dependabot-common"
+  spec.name         = "dependabot-azure_pipelines"
+  spec.summary      = "Azure Pipelines support for dependabot-common"
   spec.version      = common_gemspec.version
   spec.description  = common_gemspec.description
 

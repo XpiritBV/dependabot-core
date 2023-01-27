@@ -4,7 +4,7 @@ require "dependabot/metadata_finders"
 require "dependabot/metadata_finders/base"
 
 module Dependabot
-  module GithubActions
+  module AzurePipelines
     class MetadataFinder < Dependabot::MetadataFinders::Base
       private
 

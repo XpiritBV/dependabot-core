@@ -4,7 +4,7 @@ require "dependabot/utils"
 require "dependabot/github_actions/version"
 
 module Dependabot
-  module GithubActions
+  module AzurePipelines
     # Lifted from the bundler package manager
     class Requirement < Gem::Requirement
       # For consistency with other languages, we define a requirements array.
