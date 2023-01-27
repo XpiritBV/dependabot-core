@@ -6,7 +6,7 @@ require "dependabot/dependency"
 require "dependabot/file_parsers"
 require "dependabot/file_parsers/base"
 require "dependabot/errors"
-require "dependabot/github_actions/version"
+require "dependabot/azure_pipelines/version"
 
 module Dependabot
   module AzurePipelines
@@ -16,7 +16,7 @@ module Dependabot
       def parse
         dependency_set = DependencySet.new
 
-        pipeline_files.each do |file|
+        pipeline_files.each do |file| 
           dependency_set += pipeline_file_dependencies(file)
         end
 
@@ -33,9 +33,13 @@ module Dependabot
         json = YAML.safe_load(file.content, aliases: true)
         task_strings = deep_fetch_task(json).uniq
 
-        task_strings.each |task| do
-          parsed = /('(?<id>[^@]+)'|"(?<id>[^@]+)")@(?<version>\d+(\.\d+){0,2})/.match(task).named_captures
-          dependency_set << task_dependency(file, parsed.id, parsed.version) unless parsed.id.nil? || parsed.version.nil?
+        task_strings.each do |task| 
+          match = /('(?<id>[^@]+)'|"(?<id>[^@]+)"|(?<id>[^@]+))@(?<version>\d+(\.\d+){0,2})/.match(task)
+          
+          next if match.nil? 
+
+          parsed = match.named_captures
+          dependency_set << task_dependency(file, parsed["id"], parsed["version"]) unless parsed["id"].nil? || parsed["version"].nil?
         end 
 
         dependency_set
@@ -50,14 +54,9 @@ module Dependabot
           requirements: [{
             requirement: nil,
             groups: [],
-            source: {
-              type: "git", #TODO: Set this to something more appropriate
-              url: "", #TODO: Add during enrichment step when marketplace is queried
-              ref: ref,
-              branch: nil
-            },
+            source: {},
             file: file.name,
-            metadata: { declaration_string: string }
+            metadata: {}
           }],
           package_manager: "azure_pipelines"
         )

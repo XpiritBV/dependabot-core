@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 require "dependabot/utils"
-require "dependabot/github_actions/version"
+require "dependabot/azure_pipelines/version"
 
 module Dependabot
   module AzurePipelines
@@ -28,6 +28,6 @@ module Dependabot
 end
 
 Dependabot::Utils.register_requirement_class(
-  "github_actions",
-  Dependabot::GithubActions::Requirement
+  "azure_pipelines",
+  Dependabot::AzurePipelines::Requirement
 )

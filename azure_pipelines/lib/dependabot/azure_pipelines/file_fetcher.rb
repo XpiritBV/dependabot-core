@@ -54,6 +54,7 @@ module Dependabot
         # the .github/pipelines/ folder.
         if directory == "/"
           @pipeline_files += [fetch_file_if_present("azure-pipelines.yml"), fetch_file_if_present("azure-pipelines.yaml")].compact
+          pipelines_dir = "/"
         else
           pipelines_dir = "."
         end
