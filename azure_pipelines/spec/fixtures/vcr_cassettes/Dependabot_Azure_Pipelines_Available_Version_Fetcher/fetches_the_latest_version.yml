@@ -1,0 +1,65 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://dev.azure.com/dependabot/_apis/distributedtask/tasks/
+  response:
+    status:
+      code: 200
+      message: OK
+    body:
+      encoding: ASCII-8BIT
+      string: |
+      '{
+        "count":3,
+        "value":
+          [
+            {
+              "id":"265990f3-5e85-4ab5-87e2-2082a96d9734",
+              "name":"testtask",
+              "version":{"major":1,"minor":1,"patch":1,"isTest":false},
+              "contributionIdentifier":"myTestName.TestName-Extension.TestTaskExtension",
+            },
+            {
+              "id":"60faef65-3155-4b0a-98c3-3fae78775fb3",
+              "name":"dependabot",
+              "version":{"major":1,"minor":4,"patch":5,"isTest":false},
+              "contributionIdentifier":"myTestId.TestName-Extension.Dependabot",
+            }
+          ]
+        }'
+- request:
+    method: get
+    uri: https://dev.azure.com/dependabot/_apis/distributedtask/tasks/60faef65-3155-4b0a-98c3-3fae78775fb3?allVersions=true
+  response:
+    status:
+      code: 200
+      message: OK
+    body:
+      encoding: ASCII-8BIT
+      string: |
+      '{
+        "count":2,
+        "value":[
+          {
+            "id":"60faef65-3155-4b0a-98c3-3fae78775fb3",
+            "name":"dependabot",
+            "version":{"major":1,"minor":1,"patch":1,"isTest":false}
+          },
+          {
+            "id":"60faef65-3155-4b0a-98c3-3fae78775fb3",
+            "name":"dependabot",
+            "version":{"major":1,"minor":2,"patch":3,"isTest":false}
+          },
+          {
+            "id":"60faef65-3155-4b0a-98c3-3fae78775fb3",
+            "name":"dependabot",
+            "version":{"major":1,"minor":2,"patch":4,"isTest":false}
+          },
+          {
+            "id":"60faef65-3155-4b0a-98c3-3fae78775fb3",
+            "name":"dependabot",
+            "version":{"major":1,"minor":4,"patch":5,"isTest":false}
+          }
+        ]
+        }'
