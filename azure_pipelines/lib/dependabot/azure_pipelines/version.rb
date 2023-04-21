@@ -17,4 +17,4 @@ module Dependabot
 end
 
 Dependabot::Utils.
-  register_version_class("github_actions", Dependabot::GithubActions::Version)
+  register_version_class("azure_pipelines", Dependabot::AzurePipelines::Version)
