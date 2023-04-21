@@ -37,6 +37,7 @@ COPY --chown=dependabot:dependabot composer/Gemfile composer/dependabot-composer
 COPY --chown=dependabot:dependabot docker/Gemfile docker/dependabot-docker.gemspec ${CODE_DIR}/docker/
 COPY --chown=dependabot:dependabot elm/Gemfile elm/dependabot-elm.gemspec ${CODE_DIR}/elm/
 COPY --chown=dependabot:dependabot git_submodules/Gemfile git_submodules/dependabot-git_submodules.gemspec ${CODE_DIR}/git_submodules/
+COPY --chown=dependabot:dependabot azure_pipelines/Gemfile azure_pipelines/dependabot-azure_pipelines.gemspec ${CODE_DIR}/azure_pipelines/
 COPY --chown=dependabot:dependabot github_actions/Gemfile github_actions/dependabot-github_actions.gemspec ${CODE_DIR}/github_actions/
 COPY --chown=dependabot:dependabot go_modules/Gemfile go_modules/dependabot-go_modules.gemspec ${CODE_DIR}/go_modules/
 COPY --chown=dependabot:dependabot gradle/Gemfile gradle/dependabot-gradle.gemspec ${CODE_DIR}/gradle/
